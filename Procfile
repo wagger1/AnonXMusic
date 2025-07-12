@@ -1,1 +1,1 @@
-web: python3 -m AnonX
+web: python3 -m AnonXMusic
