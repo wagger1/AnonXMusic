@@ -49,8 +49,14 @@ async def init():
         LOGGER(__name__).warning(f"Failed to load banned users: {e}")
 
     await safe_start(app)  # ✅ handles FloodWait
+
     for all_module in ALL_MODULES:
-        importlib.import_module("AnonXMusic.plugins." + all_module)
+        if all_module.strip():
+            try:
+                importlib.import_module("AnonXMusic.plugins." + all_module)
+            except Exception as e:
+                LOGGER("AnonXMusic.plugins").error(f"Failed to import {all_module}: {e}")
+
     LOGGER("AnonXMusic.plugins").info("Successfully Imported Modules...")
 
     await userbot.start()
