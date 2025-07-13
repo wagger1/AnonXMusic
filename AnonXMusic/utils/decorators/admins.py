@@ -13,7 +13,7 @@ from AnonXMusic.utils.database import (
     is_nonadmin_chat,
     is_skipmode,
 )
-from config import SUPPORT_CHAT, adminlist, confirmer
+from config import SUPPORT_CHANNEL, adminlist, confirmer
 from strings import get_string
 
 from ..formatters import int_to_alpha
