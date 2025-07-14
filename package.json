@@ -1,0 +1,8 @@
+{
+  "name": "anonxmusic",
+  "version": "1.0.0",
+  "description": "Node environment for AnonXMusic bot",
+  "engines": {
+    "node": ">=15.0.0"
+  }
+}
