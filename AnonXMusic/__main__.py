@@ -48,12 +48,13 @@ async def init():
     except Exception as e:
         LOGGER(__name__).warning(f"Failed to load banned users: {e}")
 
-    await safe_start(app)  # ✅ handles FloodWait
+    await safe_start(app)
 
+    # ✅ Fixed plugin import
     for all_module in ALL_MODULES:
         if all_module.strip():
             try:
-                importlib.import_module("AnonXMusic.plugins." + all_module)
+                importlib.import_module("AnonXMusic.plugins." + all_module.lstrip("."))
             except Exception as e:
                 LOGGER("AnonXMusic.plugins").error(f"Failed to import {all_module}: {e}")
 
